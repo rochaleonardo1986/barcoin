@@ -1981,7 +1981,7 @@ bool LoadBlockIndex(bool fAllowNew)
         pchMessageStart[1] = 0xc0;
         pchMessageStart[2] = 0xb8;
         pchMessageStart[3] = 0xdb;
-        hashGenesisBlock = uint256("0x5813d4cfab0eeda94a15d11c5e7d6895e667fbbe67c59ef9a1b3bc232c9a0b7f");
+        hashGenesisBlock = uint256("0x8f95203034f1c12f85b02bd7745033b6959f6cc856e5219696fc3cda7536fa25");
     }
 
     //
@@ -1999,10 +1999,10 @@ bool LoadBlockIndex(bool fAllowNew)
     {
         if (!fAllowNew)
             return false;
-    
-        
+            
         // Genesis block
-        const char* pszTimestamp = "Building a coin to show the world how...";
+        const char* pszTimestamp = "nivel de calor ... quem dera ser um peixe...";
+";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2014,21 +2014,20 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1369623856; //epochtime
+        block.nTime    = 1515177202; //epochtime
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 1345972;
-
+        block.nNonce   = 1374778;
         if (fTestNet)
-        {
-            block.nTime    = 1369591342;
-            block.nNonce   = 440824;
+     
+	{
+            block.nTime    = 1515177202;
+            block.nNonce   = 1374778;
         }
-
         //// debug print
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x2fc1b7ef46270c053711fbae934cf7f83378efd4b3e158079451d9c6c90e4700"));
+        assert(block.hashMerkleRoot == uint256("0x24fe7bc1c6c25fc32dbbe4c5e00059142be1b3a8e94e45c9bab0f9ec05e78554"));
 
         // If genesis block hash does not match, then generate new genesis hash.
         if (false && block.GetHash() != hashGenesisBlock)
