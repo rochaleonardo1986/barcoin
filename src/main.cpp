@@ -828,13 +828,13 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 1 * COIN;
+    int64 nSubsidy = 10 * COIN;
 
     return nSubsidy + nFees;
 }
 
 static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // barcoin: 1 days
-static const int64 nTargetSpacing = 120; // barcoin: 2 minute blocks
+static const int64 nTargetSpacing = 15; // barcoin: 15 seg blocks
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
