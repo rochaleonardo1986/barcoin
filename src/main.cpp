@@ -2002,7 +2002,7 @@ bool LoadBlockIndex(bool fAllowNew)
             
         // Genesis block
         const char* pszTimestamp = "nivel de calor ... quem dera ser um peixe...";
-";
+
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
